@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.store.db.mapper.OrderDetailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.store.db.entity.OrderDetail">
+        <id column="id" property="id" />
+        <result column="order_no" property="orderNo" />
+        <result column="pro_no" property="proNo" />
+        <result column="goods_name" property="goodsName" />
+        <result column="goods_price" property="goodsPrice" />
+        <result column="goods_marque" property="goodsMarque" />
+        <result column="goods_store_barcode" property="goodsStoreBarcode" />
+        <result column="goods_mode_desc" property="goodsModeDesc" />
+        <result column="goods_mode_params" property="goodsModeParams" />
+        <result column="discount_rate" property="discountRate" />
+        <result column="discount_amount" property="discountAmount" />
+        <result column="number" property="number" />
+        <result column="subtotal" property="subtotal" />
+        <result column="goods_exists" property="goodsExists" />
+        <result column="remark" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, order_no, pro_no, goods_name, goods_price, goods_marque, goods_store_barcode, goods_mode_desc, goods_mode_params, discount_rate, discount_amount, number, subtotal, goods_exists, remark
+    </sql>
+
+</mapper>

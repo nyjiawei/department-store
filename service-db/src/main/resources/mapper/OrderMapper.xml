@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.store.db.mapper.OrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.store.db.entity.Order">
+        <id column="id" property="id" />
+        <result column="order_no" property="orderNo" />
+        <result column="delivery_address_id" property="deliveryAddressId" />
+        <result column="create_time" property="createTime" />
+        <result column="payment_time" property="paymentTime" />
+        <result column="status" property="status" />
+        <result column="user_id" property="userId" />
+        <result column="goods_count" property="goodsCount" />
+        <result column="amount_total" property="amountTotal" />
+        <result column="order_amount_total" property="orderAmountTotal" />
+        <result column="order_logistics_id" property="orderLogisticsId" />
+        <result column="logistics_fee" property="logisticsFee" />
+        <result column="pay_channel" property="payChannel" />
+        <result column="escrow_trade_no" property="escrowTradeNo" />
+        <result column="invoice_id" property="invoiceId" />
+        <result column="need_invoice" property="needInvoice" />
+        <result column="comment" property="comment" />
+        <result column="is_deleted" property="isDeleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, order_no, delivery_address_id, create_time, payment_time, status, user_id, goods_count, amount_total, order_amount_total, order_logistics_id, logistics_fee, pay_channel, escrow_trade_no, invoice_id, need_invoice, comment, is_deleted
+    </sql>
+
+</mapper>

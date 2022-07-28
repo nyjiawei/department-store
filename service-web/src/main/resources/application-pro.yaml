@@ -1,0 +1,28 @@
+#tomcat
+#server.ssl.key-store = .keystore
+#server.ssl.key-store-password = jiawei1207
+#server.ssl.keyStoreType = JKS
+#server.ssl.keyAlias: tomcat
+server:
+  port: 8083
+  session-timeout: 2000
+  tomcat:
+    uri-encoding: UTF-8
+    compression: off
+
+spring:
+  redis:
+    host:
+    username:
+    password:
+    timeout: 0
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+
+swagger:
+  url: http://127.0.0.1:8083/swagger-ui.html#/
+
+db-service-url: http://127.0.0.1:8084

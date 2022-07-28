@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.store.db.mapper.OrderLogisticsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.store.db.entity.OrderLogistics">
+        <id column="id" property="id" />
+        <result column="order_id" property="orderId" />
+        <result column="express_no" property="expressNo" />
+        <result column="consignee_name" property="consigneeName" />
+        <result column="consignee_mobile" property="consigneeMobile" />
+        <result column="consignee_address" property="consigneeAddress" />
+        <result column="consignee_zip" property="consigneeZip" />
+        <result column="logistics_type" property="logisticsType" />
+        <result column="logistics_id" property="logisticsId" />
+        <result column="logistics_fee" property="logisticsFee" />
+        <result column="agency_fee" property="agencyFee" />
+        <result column="delivery_amount" property="deliveryAmount" />
+        <result column="order_logistics_status" property="orderLogisticsStatus" />
+        <result column="logistics_settlement_status" property="logisticsSettlementStatus" />
+        <result column="logistics_result_last" property="logisticsResultLast" />
+        <result column="logistics_create_time" property="logisticsCreateTime" />
+        <result column="logistics_update_time" property="logisticsUpdateTime" />
+        <result column="logistics_settlement_time" property="logisticsSettlementTime" />
+        <result column="logistics_pay_channel" property="logisticsPayChannel" />
+        <result column="logistics_pay_no" property="logisticsPayNo" />
+        <result column="reconciliation_status" property="reconciliationStatus" />
+        <result column="reconciliation_time" property="reconciliationTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, order_id, express_no, consignee_name, consignee_mobile, consignee_address, consignee_zip, logistics_type, logistics_id, logistics_fee, agency_fee, delivery_amount, order_logistics_status, logistics_settlement_status, logistics_result_last, logistics_create_time, logistics_update_time, logistics_settlement_time, logistics_pay_channel, logistics_pay_no, reconciliation_status, reconciliation_time
+    </sql>
+
+</mapper>
