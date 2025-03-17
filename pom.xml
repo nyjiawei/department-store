@@ -3,25 +3,26 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.example</groupId>
+    <groupId>com.fjw</groupId>
     <artifactId>department-store</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>department-store-parent</name>
     <modules>
-        <module>service-web</module>
-        <module>service-db</module>
+        <module>store-provide</module>
+        <module>store-alipay</module>
     </modules>
     <packaging>pom</packaging>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
         <spring.boot.version>2.6.3</spring.boot.version>
-        <swagger.version>2.7.0</swagger.version>
+        <swagger.version>3.0.0</swagger.version>
         <mybatis.plus.version>3.5.1</mybatis.plus.version>
         <starter.redis.version>2.7.0</starter.redis.version>
-        <druid.version>1.1.20</druid.version>
+        <rabbitmq.version>3.2.5</rabbitmq.version>
+        <jackson.core>2.13.1</jackson.core>
     </properties>
 
-    <!--自定义管理依赖版本，相当于spring-boot-parent-->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -63,6 +64,11 @@
                 <version>${spring.boot.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-amqp</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>8.0.28</version>
@@ -79,9 +85,9 @@
                 <version>${starter.redis.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid</artifactId>
-                <version>${druid.version}</version>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${swagger.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -98,35 +104,24 @@
                 <artifactId>commons-lang3</artifactId>
                 <version>3.7</version>
             </dependency>
-            <!--swagger依赖-->
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${swagger.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${swagger.version}</version>
-            </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-annotations</artifactId>
-                <version>2.13.1</version>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.core}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-core</artifactId>
-                <version>2.13.1</version>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.core}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>2.13.1</version>
+                <version>${jackson.core}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: dev
+
+logging:
+  level:
+    root: WARN  # 生产环境日志级别设置为WARN
+    com.example: INFO  # 生产环境减少日志输出
+  file:
+    enabled: true  # 生产环境启用日志文件
+    name: /var/logs/myapp/app.log  # 生产环境日志文件路径
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"  # 生产环境日志文件格式
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"  # 生产环境控制台日志格式

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fjw.provide.mapper.GoodsSkuMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.fjw.provide.model.GoodsSku">
+        <id column="id" property="id" />
+        <result column="goods_id" property="goodsId" />
+        <result column="property_ids" property="propertyIds" />
+        <result column="properties" property="properties" />
+        <result column="properties_value" property="propertiesValue" />
+        <result column="properties_obj" property="propertiesObj" />
+        <result column="price" property="price" />
+        <result column="stock" property="stock" />
+        <result column="weight" property="weight" />
+        <result column="unit_name" property="unitName" />
+        <result column="cover_picture" property="coverPicture" />
+        <result column="create_time" property="createTime" />
+        <result column="creator_by" property="creatorBy" />
+        <result column="update_time" property="updateTime" />
+        <result column="update_by" property="updateBy" />
+        <result column="enabled_flag" property="enabledFlag" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, goods_id, properties,property_ids, properties_value,properties_obj, price, stock, weight, unit_name, cover_picture, create_time, creator_by, update_time, update_by, enabled_flag
+    </sql>
+
+</mapper>

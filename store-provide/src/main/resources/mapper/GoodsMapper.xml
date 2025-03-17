@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fjw.provide.mapper.GoodsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.fjw.provide.model.Goods">
+        <id column="id" property="id" />
+        <result column="cid" property="cid" />
+        <result column="title" property="title" />
+        <result column="pro_no" property="proNo" />
+        <result column="keywords" property="keywords" />
+        <result column="img_url" property="imgUrl" />
+        <result column="price" property="price" />
+        <result column="description" property="description" />
+        <result column="pv" property="pv" />
+        <result column="status" property="status" />
+        <result column="create_time" property="createTime" />
+        <result column="creator_by" property="creatorBy" />
+        <result column="update_time" property="updateTime" />
+        <result column="update_by" property="updateBy" />
+        <result column="enabled_flag" property="enabledFlag" />
+    </resultMap>
+
+    <!-- vo结果集 -->
+    <resultMap id="SimpleResultMap" type="com.fjw.provide.vo.GoodsVo">
+        <id column="id" property="id" />
+        <result column="cid" property="cid" />
+        <result column="sku_id" property="skuId" />
+        <result column="title" property="title" />
+        <result column="pro_no" property="proNo" />
+        <result column="properties_value" property="propertiesValue" />
+        <result column="keywords" property="keywords" />
+        <result column="cover_picture" property="imgUrl" />
+        <result column="price" property="price" />
+        <result column="pv" property="pv" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, cid, title, pro_no, keywords, img_url, price, description, pv, status, create_time, creator_by, update_time, update_by, enabled_flag
+    </sql>
+
+    <select id="search" resultMap="SimpleResultMap">
+        SELECT
+            g.id,
+            g.title,
+            g.pro_no,
+            g.keywords,
+            sku.properties_value,
+            sku.price,
+            sku.id AS sku_id,
+            sku.cover_picture
+        FROM goods_sku sku
+        LEFT JOIN goods g ON g.id = sku.goods_id
+        WHERE
+            sku.stock > 0
+            AND sku.enabled_flag = 1
+        <if test="bo != null">
+            AND 1=1
+        </if>
+    </select>
+
+</mapper>
