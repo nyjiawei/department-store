@@ -61,7 +61,7 @@ public class OrderSnapshoot implements Serializable {
 
     @ApiModelProperty("价格快照")
     @TableField("price")
-    private String price;
+    private BigDecimal price;
 
     @ApiModelProperty("商品品牌")
     @TableField("marque")

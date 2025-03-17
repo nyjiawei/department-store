@@ -7,6 +7,9 @@
         <id column="id" property="id" />
         <result column="order_no" property="orderNo" />
         <result column="delivery_address" property="deliveryAddress" />
+        <result column="addressee" property="addressee" />
+        <result column="mobile" property="mobile" />
+        <result column="area" property="area" />
         <result column="payment_time" property="paymentTime" />
         <result column="status" property="status" />
         <result column="user_id" property="userId" />
@@ -29,7 +32,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, order_no, delivery_address, payment_time, status, user_id, goods_count, amount, real_amount, order_logistics_id, logistics_fee, pay_channel, escrow_trade_no, invoice_id, need_invoice, remark, create_time, creator_by, update_time, update_by, enabled_flag
+        id, order_no, delivery_address, addressee, mobile, area, payment_time, status, user_id, goods_count, amount, real_amount, order_logistics_id, logistics_fee, pay_channel, escrow_trade_no, invoice_id, need_invoice, remark, create_time, creator_by, update_time, update_by, enabled_flag
     </sql>
 
 </mapper>

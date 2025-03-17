@@ -15,4 +15,8 @@ import com.fjw.provide.request.OrderSnapshootRequest;
 public interface IOrderService extends IService<Order> {
 
     String create(OrderSnapshootRequest orderSnapshoot);
+
+    Order getByOrderNo(String orderNo);
+
+    Order getByOrderId(Long id);
 }

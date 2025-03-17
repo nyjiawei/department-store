@@ -105,5 +105,12 @@ public class UserDeliveryAddress implements Serializable {
     @TableLogic
     private Boolean enabledFlag;
 
-
+    public String getAddressStr(){
+        StringBuilder builder = new StringBuilder(this.province);
+        builder.append(this.city)
+                .append(this.area)
+                .append(this.street)
+                .append(this.specificAddress);
+        return builder.toString();
+    }
 }

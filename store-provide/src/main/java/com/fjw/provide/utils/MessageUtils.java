@@ -24,7 +24,11 @@ public class MessageUtils {
         MessageUtils.rabbitTemplate = rabbitTemplate;
     }
 
-    public static <T> void sendMessage(String exchange,String routingKey,T t){
+    public static <T> void sendMessageJson(String exchange,String routingKey,T t){
         rabbitTemplate.convertAndSend(exchange,routingKey,JSONObject.toJSONString(t));
+    }
+
+    public static void sendMessageString(String exchange,String routingKey,String message){
+        rabbitTemplate.convertAndSend(exchange,routingKey,message);
     }
 }

@@ -4,6 +4,10 @@ import com.fjw.provide.enums.ResponseEnum;
 import com.fjw.provide.exception.ApplicationException;
 import lombok.SneakyThrows;
 import org.apache.commons.lang3.ObjectUtils;
+import org.springframework.util.CollectionUtils;
+
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * @Author：jiawei
@@ -20,7 +24,13 @@ public class DefinedExceptionUtils {
         if(object == null){
             throw new ApplicationException(ResponseEnum.ERROR);
         }
+    }
 
+    @SneakyThrows
+    public static void isEmpty(Collection<?> list) {
+        if(CollectionUtils.isEmpty(list)){
+            throw new ApplicationException(ResponseEnum.ERROR);
+        }
     }
 
 }

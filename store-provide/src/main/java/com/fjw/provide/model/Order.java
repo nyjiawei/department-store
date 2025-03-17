@@ -7,6 +7,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -22,7 +24,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@TableName("order")
+@TableName("`order`")
 @ApiModel(value = "Order对象", description = "订单主表")
 public class Order implements Serializable {
 
@@ -39,13 +41,25 @@ public class Order implements Serializable {
     @TableField("delivery_address")
     private String deliveryAddress;
 
+    @ApiModelProperty("收货人")
+    @TableField("addressee")
+    private String addressee;
+
+    @ApiModelProperty("联系电话")
+    @TableField("mobile")
+    private String mobile;
+
+    @ApiModelProperty("配送区域")
+    @TableField("area")
+    private String area;
+
     @ApiModelProperty("付款时间")
     @TableField("payment_time")
     private LocalDateTime paymentTime;
 
     @ApiModelProperty("订单状态:未付款,已付款,已发货,已签收,退货申请,退货中,已退货,取消交易")
     @TableField("status")
-    private String status;
+    private Integer status;
 
     @ApiModelProperty("用户ID")
     @TableField("user_id")
@@ -53,7 +67,7 @@ public class Order implements Serializable {
 
     @ApiModelProperty("商品计数")
     @TableField("goods_count")
-    private Long goodsCount;
+    private Integer goodsCount;
 
     @ApiModelProperty("商品总价")
     @TableField("amount")
@@ -110,6 +124,9 @@ public class Order implements Serializable {
     @ApiModelProperty("是否有效")
     @TableField("enabled_flag")
     private Boolean enabledFlag;
+
+    @TableField(exist = false)
+    private List<OrderSnapshoot> snapshootList;
 
 
 }
