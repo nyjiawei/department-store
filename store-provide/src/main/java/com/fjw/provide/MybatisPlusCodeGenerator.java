@@ -23,8 +23,8 @@ public class MybatisPlusCodeGenerator {
     public static void main(String[] args) {
 
         //代码生成器配置
-        FastAutoGenerator.create("jdbc:mysql://gz-cdb-i977ztl1.sql.tencentcdb.com:21441/mall_db?useUnicode=true&characterEncoding=utf-8&useSSL=true",
-                        "root", "jysru6-tojnaT-cinqen")
+        FastAutoGenerator.create("jdbc:mysql://***:21441/mall_db?useUnicode=true&characterEncoding=utf-8&useSSL=true",
+                        "****", "****")
                 .globalConfig(builder -> {
                     builder.author("jiawei") // 设置作者
                             .enableSwagger() // 开启 swagger 模式
